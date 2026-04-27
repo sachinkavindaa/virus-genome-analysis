@@ -1,4 +1,4 @@
-# Mystery Virus Genome Analysis
+# Virus Genome Analysis
 
 Genome analysis project for identifying a mystery virus found in Vero cell culture.
 
