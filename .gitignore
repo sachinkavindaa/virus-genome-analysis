@@ -1,0 +1,9 @@
+seqs/
+*.bam
+*.bai
+*.sam
+*.fastq
+*.fq
+*.gz
+*.out
+*.err

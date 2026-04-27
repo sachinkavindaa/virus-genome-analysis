@@ -1,0 +1,20 @@
+#!/bin/sh
+#SBATCH --time=05:00:00          # Run time in hh:mm:ss
+#SBATCH --tasks-per-node=1       # Maximum memory required per CPU (in megabytes)
+#SBATCH --nodes=1
+#SBATCH --mem=250G
+#SBATCH --job-name=index_abvp
+#SBATCH --error=metag_class.err
+#SBATCH --output=metag_class.out
+
+module load anaconda seqtk
+
+conda activate /mnt/nrdstor/asci832/shared/envs/centrifuge
+
+#cat /work/asci832/shared/metagenomics/seqs/*.fastq > all.fastq
+
+#seqtk seq -a all.fastq > all.fa
+
+centrifuge-class -p 4 -f -x /work/asci832/shared/index_abvp_11152024/abvp_2024 /work/asci832/shared/mystery/seqs/all.fa -S output
+
+centrifuge-kreport -x /work/asci832/shared/index_abvp_11152024/abvp_2024 output > kreport
