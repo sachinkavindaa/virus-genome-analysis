@@ -7,3 +7,4 @@ seqs/
 *.gz
 *.out
 *.err
+output/output
